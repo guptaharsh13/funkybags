@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funky bags</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Handlee&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Nanum+Gothic:wght@700&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Kaushan+Script&family=Nanum+Gothic:wght@700&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <a href="{% url 'index' %}"> <img src="{% static 'images/logo1.png' %}" alt="logo"></a>
+        </div>
+        <ul>
+            <li class="item"><a id="act" href="{% url 'shop' %}">Home</a></li>
+            <li class="item"><a href="{% url 'shop' %}">Shop</a></li>
+            <li class="item"><a href="{% url 'about' %}">About</a></li>
+            <li class="item"><a href="#">Contact</a></li>
+            <li class="item"><a href="#">FAQ</a></li>
+            {% if not user.is_authenticated %}
+            <li class="sign"><a href="{% url 'register' %}">Sign Up.&#x1F4DD;</a></li>
+            <li class="login"> <a href="{% url 'login' %}">Log in.</a></li>
+            {% else %}
+
+            <li class="item"> <a href="#">Welcome {{ user.first_name }} {{ user.last_name }}</a></li>
+            <li class="item"> <a href="{% url 'logout' %}">Logout</a></li>
+
+            {% endif %}
+        </ul>
+
+
+    </nav>
+    <div class="content">
+
+        
+        <div class="shop">Shopping</div>
+        <div class="re">Rediscovered</div>
+        <div class="red">Redesigned</div>
+    </div>
+    <div class="btn">
+        <a href="{% url 'shop' %}" style="text-decoration: none;">Shop Now</a>
+    </div>
+
+    <div style="position: absolute; top: 225px; left:155px;">
+        {% include 'partials/_alerts.html' %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Shopping</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Handlee&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Nanum+Gothic:wght@700&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Kaushan+Script&family=Nanum+Gothic:wght@700&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Pathway+Gothic+One&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Pacifico&family=Pathway+Gothic+One&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styleshop.css' %}">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <a href="{% url 'index' %}"> <img src="{% static 'images/logo1.png' %}" alt="logo"></a>
+        </div>
+        <ul>
+            <li class="item "><a href="{% url 'index' %}">Home</a></li>
+            <li class="item "><a id="act" href="{% url 'shop' %}">Shop</a></li>
+            <li class="item"><a href="{% url 'about' %}">About</a></li>
+            <li class="item"><a href="#">Contact</a></li>
+            <li class="item"><a href="#">FAQ</a></li>
+            {% if not user.is_authenticated %}
+            <li class="sign"><a href="{% url 'register' %}">Sign Up.&#x1F4DD;</a></li>
+            <li class="login"> <a href="{% url 'login' %}">Log in.</a></li>
+            {% else %}
+
+            <li class="item"> <a href="#">Welcome {{ user.first_name }} {{ user.last_name }}</a></li>
+            <li class="item"> <a href="{% url 'logout' %}">Logout</a></li>
+
+            {% endif %}
+        </ul>
+
+
+    </nav>
+    <h1>Our Products</h1>
+    <section class="containers">
+        <div class="items" id="item1"><img src="{% static 'images/1.jpg' %}" alt=""><button><a
+                    href="{% url 'purchased' %}" style="text-decoration: none; color: black;">BUY NOW:
+                    Rs.300</a></button></div>
+        <div class="items" id="item2"><img src="{% static 'images/2.jpg' %}" alt=""><button><a
+                    href="{% url 'purchased' %}" style="text-decoration: none; color: black;">BUY NOW:
+                    Rs.350</a></button></div>
+        <div class="items" id="item3"><img src="{% static 'images/3.jpg' %}" alt=""><button><a
+                    href="{% url 'purchased' %}" style="text-decoration: none; color: black;">BUY NOW:
+                    Rs.400</a></button></div>
+        <div class="items sim" id="item4"><img src="{% static 'images/4.jpg' %}" alt=""><button><a
+                    href="{% url 'purchased' %}" style="text-decoration: none; color: black;">BUY NOW:
+                    Rs.500</a></button></div>
+        <div class="items sim" id="item5"><img src="{% static 'images/5.jpg' %}" alt=""><button><a
+                    href="{% url 'purchased' %}" style="text-decoration: none; color: black;">BUY NOW:
+                    Rs.620</a></button></div>
+        <div class="items sim" id="item6"><img src="{% static 'images/6.jpg' %}" alt=""><button><a
+                    href="{% url 'purchased' %}" style="text-decoration: none; color: black;">BUY NOW:
+                    Rs.390</a></button></div>
+        <div class="items sim" id="item7"><img src="{% static 'images/7.jpg' %}" alt=""><button><a
+                    href="{% url 'purchased' %}" style="text-decoration: none; color: black;">BUY NOW:
+                    Rs.370</a></button></div>
+        <div class="items sim" id="item8"><img src="{% static 'images/8.jpg' %}" alt=""><button><a
+                    href="{% url 'purchased' %}" style="text-decoration: none; color: black;">BUY NOW:
+                    Rs.999</a></button></div>
+        <div class="items sim" id="item9"><img src="{% static 'images/9.jpg' %}" alt=""><button><a
+                    href="{% url 'purchased' %}" style="text-decoration: none; color: black;">BUY NOW:
+                    Rs.899</a></button></div>
+
+    </section>
+</body>
+
+</html>

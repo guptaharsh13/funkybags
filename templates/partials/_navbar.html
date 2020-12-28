@@ -1,0 +1,43 @@
+<nav class="navbar navbar-light bg-white navbar-expand-sm fixed-top" id="navigation_bar_home" style="box-shadow: 0 0 15px gray;">
+  <!-- Navigation Bar -->
+  <div class="container">
+    <a class="navbar-brand mr-auto pr-3 font_oswald" href="#">Funky Bags</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse font_cardo" id="Navbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item {% if '/' == request.path %} active {% endif %}"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'shop' %}">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="compare.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="compare.html">FAQ</a></li>
+      </ul>
+
+      {% if user.is_authenticated %}
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="{% url 'dashboard' %}" class="nav-link">
+              Welcome {{ user.first_name }} {{ user.last_name }} ( {{ user.username }} )
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'logout' %}" class="btn btn-block bg_prime text-white"><i class="fa fa-sign-out"></i>Logout</a>
+          </li>
+        </ul>
+
+      {% else %}
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mb-2 mb-lg-0 mr-lg-2"><a role="button" class="btn btn-block bg_second"
+            href="{% url 'login' %}"><strong>Login</strong></a></li>
+        <li class="nav-item"><a role="button" class="btn btn-block bg_prime text-white" href="{% url 'register' %}"><strong>Get
+              started</strong> - it's free</a></li>
+      </ul>
+
+      {% endif %}
+
+    </div>
+  </div>
+</nav>

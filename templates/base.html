@@ -1,0 +1,127 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funky Bags {% block title %} {% endblock %}</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--Fonts-->
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Cardo' rel='stylesheet'>
+
+  <!--Custom css-->
+  <link rel="stylesheet" href="{% static 'css/sbstyle.css' %}">
+
+</head>
+
+<body>
+
+  {% include 'partials/_navbar.html' %}
+
+  {% block content %}
+
+  {% endblock %}
+
+  <!-- Footer -->
+  <!-- <footer id="main-footer" class="py-3 bg_prime text-white text-center {% block footer %}     {% endblock %}">
+        Copyright &copy;
+        <span class="year"></span> Message Property
+    </footer> -->
+
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-6 col-lg-3">
+          <h5 class="text-white mb-3">Product</h5>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Designer</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Interactions</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">CMS</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Ecommerce</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Editor</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Hosting</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Pricing</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Enterprise</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Templates</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Feature Index</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h5 class="text-white mb-3">Company</h5>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">About</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Jobs</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Security</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Terms of Service</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Privacy Policy</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Cookie Policy</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Cookie Preferences</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Sitemap</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Become an Affiliate</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Webflow Virtual World Tour</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h5 class="text-white mb-3">Learn & Get Help</h5>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">University</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Blog</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Ebooks</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Forum</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Community</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Hire an Expert</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Customers</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Webflow vs. Wordpress</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Status</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Support</a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links">Wishlist</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h5 class="text-white mb-3">Social</h5>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a href="http://example.com/" class="footer_links"><i class="fa fa-youtube-play"></i></a>
+            </li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links"><i class="fa fa-twitter"></i></a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links"><i class="fa fa-facebook"></i></a></li>
+            <li class="mb-3"><a href="http://example.com/" class="footer_links"><i class="fa fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <p class="text-secondary">© 2020 Funky Bags, Inc. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  {% block script_tags %}
+
+  {% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+/* CSS reset */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background: url(../images/bg3.o.jpg) no-repeat center center/cover;
+    height: 720px;
+    width: 800px;
+   
+}
+/* Navigation bar */
+#navbar{
+    display: flex;
+    position: relative;
+    left: 493px;
+   
+
+}
+/* Navigation bar logo and img */
+#logo{
+    margin: 4px 26px;
+}
+#logo img {
+width:36px;
+margin: 6px 5px;
+position: absolute;
+left:-484px;
+filter: invert(88%);
+
+}
+/* Navigation bar List Styling */
+#navbar ul{
+    display: flex;
+    padding-top: 14px;
+    justify-content: center;
+    align-items: center; 
+    
+}
+#navbar ul li{
+    list-style: none;
+    padding: 0px 14px;
+
+    
+    
+}
+#navbar ul li a{
+    text-decoration: none; color: black;
+    color: rgb(255, 255, 255);
+    padding: 6px;
+    font-weight: bolder;
+    font-family: 'Andika New Basic', sans-serif;
+    transition: all ease-in-out 0.5s;
+}
+
+#navbar ul li a#act {
+    color: rgb(42, 190, 153);
+}
+#navbar ul li a:hover{
+    color: rgb(42, 190, 153);
+    /* background-color: rgb(255, 200, 200);
+    border-radius: 20px; */
+    font-weight: bolder;
+}
+.sign,.login{
+    position: relative;
+    right:-345px;
+}
+    #navbar::before{
+        content: "";
+        background-color: rgb(0 0 0 / 92%);
+        position:absolute;
+        top:0px;/*This is for navbar BG*/
+        height: 59px;
+        left: -493px;
+        width: 1536px;
+        z-index: -1;/* This will bring  navBG at the back of nav Content */
+        opacity:0.9;
+    }
+    /* ---------------main content start------------- */
+    .shop{
+        position: absolute;
+        top: 247px;
+        left: 35px;
+        font-size: 186px;
+        color: rgb(214, 255, 250);
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+    .re{
+        position: absolute;
+        top: 280px;
+        left: 857px;
+        font-size: 79px;
+        color: rgb(255, 255, 255);
+        font-family: 'Kaushan Script', cursive;
+    }
+    .red{
+        position: absolute;
+        top: 367px;
+        left: 857px;
+        font-size: 79px;
+        color: rgb(255, 255, 255);
+        font-family: 'Kaushan Script', cursive;
+    }
+    .content{
+        position: relative;
+        right: -91px;
+        top: -59px;
+    }
+    .btn{
+        position: absolute;
+        top: 512px;
+        left: 670px;
+        height: 70px;;
+    }
+    .btn a{
+        font-size: 28px;
+        background-color: transparent;
+        border:6px solid rgb(0, 73, 61);
+        padding: 8px;
+        font-family: 'Kalam', cursive;
+        color: white;
+        cursor: pointer;
+        transition: all ease-in-out 0.5s;
+    }
+    .btn a:hover{
+        background-color: rgba(89, 185, 173, 0.836);
+        border-color: transparent;
+        color: black;
+        padding: 8px;
+    }
+    

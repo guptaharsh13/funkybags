@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+  | Login
+
+{% endblock %}
+
+{% block content %}
+
+<style>
+  label {
+    font-size: 17px;
+  }
+</style>
+
+<section class="bg-light py-5 my-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <div class="card-header text-white bg_prime">
+              <h4>
+                <i class="fa fa-sign-in"></i> Login</h4>
+            </div>
+            <div class="card-body">
+                <form action="" method="POST">
+
+                    {% csrf_token %}
+
+                    {% include 'partials/_alerts.html' %}
+
+                <div class="form-group">
+                  <label for="email" class="font_cardo">Email</label>
+                  <input type="email" name="email" class="form-control" id="email" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="_password" class="font_cardo">Password</label>
+                  <input type="password" name="password" class="form-control" id="_password" required>
+                </div>
+                
+                <input type="submit" value="Login" class="btn btn-block bg_prime text-white">
+                
+                <a href="{% url 'reset_password' %}" class="font_cardo">Forgot Password?</a><br>
+                <a href="{% url 'register' %}" class="font_cardo">New user? Register</a>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
